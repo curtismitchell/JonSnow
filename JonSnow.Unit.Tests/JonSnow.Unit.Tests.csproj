@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseSpec.cs" />
+    <Compile Include="HashwordSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersControllerSpec.cs" />
   </ItemGroup>
