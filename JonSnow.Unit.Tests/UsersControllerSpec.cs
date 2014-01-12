@@ -19,7 +19,8 @@ namespace JonSnow.Unit.Tests
             var res = controller.Index() as RedirectToRouteResult;
 
             res.Should().NotBeNull();
-            
+            res.RouteValues["action"].Should().Be("SignUp");
+
         }
     }
 }
