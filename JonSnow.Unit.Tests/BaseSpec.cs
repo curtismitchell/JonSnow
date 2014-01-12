@@ -6,13 +6,13 @@ namespace JonSnow.Unit.Tests
     public abstract class BaseSpec
     {
         [SetUp]
-        public void BeforeEachSpec()
+        public virtual void BeforeEachSpec()
         {
 
         }
 
         [TearDown]
-        public void AfterEachSpec()
+        public virtual void AfterEachSpec()
         {
 
         }

@@ -12,15 +12,29 @@ namespace JonSnow.Unit.Tests
 {
     public class UsersControllerSpec : BaseSpec
     {
-        [Test]
-        public void ShouldRedirectNonAuthentiecatedUsersToSignUp()
+        UsersController controller;
+
+        public override void BeforeEachSpec()
         {
-            var controller = new UsersController();
+            controller = new UsersController();
+            base.BeforeEachSpec();
+        }
+
+        [Test]
+        public void ShouldRedirectUsersToSignUp()
+        {
             var res = controller.Index() as RedirectToRouteResult;
 
             res.Should().NotBeNull();
             res.RouteValues["action"].Should().Be("SignUp");
 
+        }
+
+        [Test]
+        public void ShouldShowTheSignUpView()
+        {
+            var res = controller.SignUp() as ViewResult;
+            res.ViewName.Should().BeEmpty(); //Convention will use action name (SignUp) as the name of the view
         }
     }
 }

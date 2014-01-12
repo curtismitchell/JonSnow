@@ -16,5 +16,10 @@ namespace JonSnow.Controllers
         }
 
         //
-	}
+
+        public ViewResult SignUp()
+        {
+            return View();
+        }
+    }
 }
